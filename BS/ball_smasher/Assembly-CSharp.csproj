@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ballOps.cs" />
     <Compile Include="Assets\Scripts\brickOps.cs" />
+    <Compile Include="Assets\Scripts\gameState.cs" />
     <Compile Include="Assets\Scripts\levelOps.cs" />
     <Compile Include="Assets\Scripts\LoseCollider.cs" />
     <Compile Include="Assets\Scripts\ScenePlayer.cs" />

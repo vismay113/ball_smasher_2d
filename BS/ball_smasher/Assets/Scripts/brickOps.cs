@@ -10,17 +10,27 @@ public class brickOps : MonoBehaviour
 
     // cache component variables
     levelOps lvl;
+    gameState state;
 
     private void Start()
     {
         lvl = FindObjectOfType<levelOps>();
         lvl.CalculateTotalBreakingBricks();
+
+        state = FindObjectOfType<gameState>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        NextLevelOnZeroBlock();
+    }
+
+    private void NextLevelOnZeroBlock()
+    {
+        state.addScore();
         AudioSource.PlayClipAtPoint(brickDestroySound, Camera.main.transform.position);
-        lvl.DecreseTotalBreakingBricks();
         Destroy(gameObject);
+        lvl.BlockDestruction();
+
     }
 }

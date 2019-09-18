@@ -15,14 +15,11 @@ public class levelOps : MonoBehaviour
         totalBreakingBricks++;
     }
 
-    public void DecreseTotalBreakingBricks()
+    public void BlockDestruction()
     {
         totalBreakingBricks--;
-    }
 
-    private void LoadNextLevel()
-    {
-        if (totalBreakingBricks == 0)
+        if (totalBreakingBricks <= 0)
         {
             sceneOps.sceneLoader();
         }
@@ -37,6 +34,6 @@ public class levelOps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LoadNextLevel();
+        
     }
 }
