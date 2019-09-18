@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5281954862984831427}
   - component: {fileID: 5281954862984831426}
   m_Layer: 0
-  m_Name: brick_blue_small
-  m_TagString: Breakable
+  m_Name: unbreakable_brick
+  m_TagString: Unbreakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1395144f8f7b1a94b8a0de16496f14fe, type: 3}
-  m_Color: {r: 1, g: 0.995283, b: 0.995283, a: 1}
+  m_Color: {r: 0.1509434, g: 0.14026344, b: 0.14026344, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,5 +122,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickDestroySound: {fileID: 8300000, guid: e9d52201cd9c5774fb2bb84e11e3de2e, type: 3}
   brickParticleVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: 144b71ecde81db341b173064e79db4a6, type: 3}

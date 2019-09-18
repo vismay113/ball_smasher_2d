@@ -9,6 +9,7 @@ public class ballOps : MonoBehaviour
     [SerializeField] float launch_pos_X = 2f;
     [SerializeField] float launch_pos_y = 15f;
     [SerializeField] AudioClip[] ballSounds;
+    [SerializeField] float randomPush = 0.3f;
 
     // state variables
     Vector2 ballToSliderVector;
@@ -16,12 +17,14 @@ public class ballOps : MonoBehaviour
 
     // cache component variables
     AudioSource ballAudioSource;
+    Rigidbody2D ballRigidBody2D;
 
     // Start is called before the first frame update
     void Start()
     {
         ballToSliderVector = transform.position - slider_blue.transform.position;
         ballAudioSource = GetComponent<AudioSource>();
+        ballRigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -44,17 +47,20 @@ public class ballOps : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(launch_pos_X, launch_pos_y);
+            ballRigidBody2D.velocity = new Vector2(launch_pos_X, launch_pos_y);
             hasLaunched = true;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 randomVelocity = new Vector2(Random.Range(0f, randomPush), Random.Range(0f, randomPush));
+        
         if (hasLaunched)
         {
             AudioClip sound = ballSounds[UnityEngine.Random.Range(0 , ballSounds.Length)];
             ballAudioSource.PlayOneShot(sound);
+            ballRigidBody2D.velocity += randomVelocity;
         }
     }
 }

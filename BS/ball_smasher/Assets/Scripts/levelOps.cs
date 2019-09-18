@@ -10,7 +10,7 @@ public class levelOps : MonoBehaviour
     // cache components variables
     ScenePlayer sceneOps;
 
-    public void CalculateTotalBreakingBricks()
+    public void CalculateTotalBricks()
     {
         totalBreakingBricks++;
     }

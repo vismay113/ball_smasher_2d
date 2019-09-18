@@ -7,20 +7,36 @@ public class sliderOps : MonoBehaviour
     [SerializeField] float screenWInUnits = 16f;
     [SerializeField] float minScreenX = 1.3f;
     [SerializeField] float maxScreenX = 14.7f;
+
+    // cache variables
+    ballOps ball;
+    gameState gs;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        ball = FindObjectOfType<ballOps>();
+        gs = FindObjectOfType<gameState>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float mousePosInUnits = Input.mousePosition.x / Screen.width * screenWInUnits;
-
         Vector2 sliderPos = new Vector2(transform.position.x , transform.position.y);
-        sliderPos.x = Mathf.Clamp(mousePosInUnits, minScreenX, maxScreenX);
+        sliderPos.x = Mathf.Clamp(getXPos(), minScreenX, maxScreenX);
         transform.position = sliderPos;
+    }
+
+    private float getXPos()
+    {
+        if (gs.autoplaySwitch())
+        {
+            return ball.transform.position.x;
+        }
+        else
+        {
+            return Input.mousePosition.x / Screen.width * screenWInUnits;
+        }
     }
 }
 

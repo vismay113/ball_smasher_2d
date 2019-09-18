@@ -5,7 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ScenePlayer : MonoBehaviour
 {
-   public void sceneLoader()
+    // configuration variable
+    gameState loseStae;
+
+    private void Start()
+    {
+        loseStae = FindObjectOfType<gameState>();
+    }
+
+    public void sceneLoader()
     {
         int currentSIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSIndex + 1);
@@ -13,6 +21,7 @@ public class ScenePlayer : MonoBehaviour
 
     public void goToStartMenu()
     {
+        loseStae.resetGame();
         SceneManager.LoadScene(0);
     }
 
