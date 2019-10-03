@@ -1236,6 +1236,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 52182667639839195, guid: 3ea5214241f11d54da6ee7a7ff4b15a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ea5214241f11d54da6ee7a7ff4b15a9, type: 3}
 --- !u!1001 &290118873240047551
@@ -1446,7 +1451,7 @@ PrefabInstance:
     - target: {fileID: 3065916386584250291, guid: bd93c65c0ee99eb4c8a103859e69edfc,
         type: 3}
       propertyPath: autoPlayStatus
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2381954535993779393, guid: bd93c65c0ee99eb4c8a103859e69edfc,
         type: 3}
@@ -1674,6 +1679,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.26762193
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357703558098100642, guid: 4fdab31812213b84795dc5f19a20db89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fdab31812213b84795dc5f19a20db89, type: 3}
